@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href ="/addpage"><button type="button" class="btn btn-info addpage">Add Page</button></a>
+<div class ="articlelist">
+
+    <div class="list-group">
+        {% for doc in docs %}
+        <a href="{{doc.full_url}}" class="list-group-item">{{doc.title}}</a>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endblock %}

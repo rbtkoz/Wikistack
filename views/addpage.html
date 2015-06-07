@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}WikiStack - Add Page{% endblock %}
+
+{% block content %}
+
+
+<!--content here-->
+<form action="/addpage" method="post">
+
+    <div class="form-group has-success has-feedback">
+        <label for="Title">Title:</label>
+        <input type="text" class="form-control form-control-feedback" name = "title" id="articletitle">
+    </div>
+
+    <div class="form-group has-success has-feedback">
+        <label for="Body">Article Body:</label>
+        <textarea class="form-control form-control-feedback" rows="8" name ="body" id="articlebody"></textarea>
+    </div>
+    <div class="subbtn">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

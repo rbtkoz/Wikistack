@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}WikiStack -{{doc[0].title}}{% endblock %}
+
+{% block content %}
+<h2>{{doc[0].title}}</h2>
+<hr>
+<p>{{doc[0].body}}</p>
+{% endblock %}
