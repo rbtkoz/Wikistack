@@ -4,12 +4,17 @@
 <a href ="/addpage"><button type="button" class="btn btn-info addpage">Add Page</button></a>
 <div class ="articlelist">
 
-    <div class="list-group">
+    <a class="list-group">
         {% for doc in docs %}
-        <a href="{{doc.full_url}}" class="list-group-item">{{doc.title}}</a>
+            <a href="{{doc.full_url}}" class="list-group-item">{{doc.title}}</a>
+                <span class ="tags">tags:</span>
+        {% for tag in doc.tags %}
+        <a href ="{{doc.full_url}}"><small>{{tag}}</small></a>
+        {% endfor %}
         {% endfor %}
 
-    </div>
+
+</div>
 
 </div>
 {% endblock %}

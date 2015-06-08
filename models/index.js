@@ -11,6 +11,7 @@ var pageSchema = new mongoose.Schema({
     url_name: String,
     owner_id: String,
     body:     String,
+    tags:     [String],
     date:     { type: Date, default: Date.now },
     status:   Number
 });
@@ -23,6 +24,11 @@ var userSchema = new mongoose.Schema({
     name:  { first: String, last: String },
     email: String
 });
+
+//Page.find({
+//    // $in matches a set of possibilities
+//    tags: {$in: ['someTag', 'someOtherTag']}
+//});
 
 var Page = mongoose.model('Page', pageSchema);
 var User = mongoose.model('User', userSchema);

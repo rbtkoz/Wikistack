@@ -11,6 +11,8 @@ router.post('/', function(req,res, next){
   console.log(req.body, "reqbody")
   var title = req.body.title;
   var content = req.body.body;
+  var tags = req.body.tags;
+  var tagArr = tags.split(" ");
 
   if(!title && content){
     title = content.split(" ").splice(0,2).join(" ");
@@ -23,7 +25,7 @@ router.post('/', function(req,res, next){
   //// STUDENT ASSIGNMENT:
   // add definitions of the `title`, `content` and `url_name` variables here
 
-  var page = new models.Page({ 'title': title, 'body': content, 'url_name': url_name });
+  var page = new models.Page({ 'title': title, 'body': content, 'tags': tagArr, 'url_name': url_name });
   page.save();
   res.redirect('/');
 })
